@@ -1,7 +1,59 @@
-# Sisop-t1
-resultados
-gcc -O0 -Wall -o threads threads.c -lpthread
-gcc -O0 -Wall -o processos processos.c -lpthread -lrt
+# Sisop-t1 — O Duelo de Contextos (Processos vs. Threads)
+
+**Disciplina:** Sistemas Operacionais – 2026/I | **Prof.:** Filipo Mór | **PUCRS**
+
+---
+
+## Como rodar
+
+**Requisitos:** Linux com `gcc` e `make` instalados.
+
+```bash
+# 1. Instalar dependências (caso necessário)
+sudo apt install gcc make -y
+
+# 2. Compilar e rodar todos os experimentos
+make run
+```
+
+---
+
+## Resultados
+
+### T1 — Threads SEM sincronização
+
+| N | Contador final | Esperado | Tempo real |
+|---|---------------|----------|------------|
+| 2 | 501.354.753 | 1.000.000.000 | 4.77s |
+| 4 | 293.959.391 | 1.000.000.000 | 9.15s |
+| 8 | 150.445.621 | 1.000.000.000 | 8.29s |
+
+### T2 — Threads COM mutex
+
+| N | Contador final | Esperado | Tempo real |
+|---|---------------|----------|------------|
+| 2 | 1.000.000.000 | 1.000.000.000 | 34.68s |
+| 4 | 1.000.000.000 | 1.000.000.000 | 36.23s |
+| 8 | 1.000.000.000 | 1.000.000.000 | 40.36s |
+
+### P1 — Processos SEM sincronização
+
+| N | Contador final | Esperado | Tempo real |
+|---|---------------|----------|------------|
+| 2 | 639.830.471 | 1.000.000.000 | 3.42s |
+| 4 | 270.312.162 | 1.000.000.000 | 3.66s |
+| 8 | 190.338.440 | 1.000.000.000 | 3.75s |
+
+### P2 — Processos COM semáforo
+
+| N | Contador final | Esperado | Tempo real |
+|---|---------------|----------|------------|
+| 2 | 1.000.000.000 | 1.000.000.000 | 32.79s |
+| 4 | 1.000.000.000 | 1.000.000.000 | 4m13.26s |
+| 8 | 1.000.000.000 | 1.000.000.000 | 3m53.63s |
+
+### Resultado cru no terminal
+
 === T1 - Threads SEM sincronizacao ===
 N=2:
 Contador final: 501354753 (esperado: 1000000000)
