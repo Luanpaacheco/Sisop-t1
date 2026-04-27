@@ -1,6 +1,6 @@
 # Sisop-t1 — O Duelo de Contextos (Processos vs. Threads)
 
-**Disciplina:** Sistemas Operacionais – 2026/I | **Prof.:** Filipo Mór | **PUCRS**
+**Disciplina:** Sistemas Operacionais – 2026/I | Luan Pacheco, Samuel Bitdinger e Heitor | **PUCRS**
 
 ---
 
